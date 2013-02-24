@@ -1,0 +1,9 @@
+level_name: robot_octo
+origin_x: 0
+origin_y: 20
+origin_z: 0
+spawn_x: 0
+spawn_y: 25
+spawn_z: 0
+oversize: 100
+clear_height: 256
