@@ -30,5 +30,5 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 find_package(octomap REQUIRED)
 include_directories(${OCTOMAP_INCLUDE_DIRS})
 link_libraries(${OCTOMAP_LIBRARIES})
-rosbuild_add_executable(minecraft_map src/octomap_dump.cpp)
+rosbuild_add_executable(octomap_dump src/octomap_dump.cpp)
 

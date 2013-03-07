@@ -65,8 +65,8 @@ class Map2d2Minecraft():
         args = parser.parse_args()
         
         print( "reading settings from %s" % args.filename)
-            
-        stream = open(args.filename)
+        this_dir, this_file = os.path.split( os.path.realpath(__file__) )
+        stream = open( os.path.join( this_dir, args.filename ) )
         settings_file = yaml.load(stream)
        
         for setting in defaults.keys():

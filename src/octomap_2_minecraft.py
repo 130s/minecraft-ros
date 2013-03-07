@@ -266,6 +266,7 @@ class Octomap2Minecraft():
         firstline = True
         beforefirstblock = True
         linecount = 0
+        actual_min = 256
 
         print "opening file"
         for line in sys.stdin:
@@ -279,7 +280,7 @@ class Octomap2Minecraft():
                     
             if beforefirstblock:
                 
-                a = re.match("(\w+): x (-?\d+.\d+) y (-?\d+.\d+) z (-?\d+.\d+)", line)
+                a = re.match("(\w+): x (-?\d+.?\d*) y (-?\d+.?\d*) z (-?\d+.?\d*)", line)
                 if a:
                     print("found values: %s" % str(a.groups()))
                     
@@ -407,6 +408,12 @@ class Octomap2Minecraft():
         item = self.level.materials.blockWithID(blockID, data)
         
         self.level.fillBlocks( box, item )
+        
+    ###############################################
+    def move_map(self):
+    ###############################################
+        print("moving to minecraft saves")
+        os.system("mv %s ~/.minecraft/saves/" % self.settings["level_name"])
 
 
         
@@ -415,6 +422,7 @@ if __name__ == "__main__":
     o.read_settings("map_octo.yaml")
     o.create_map()
     o.read_input()
+    o.move_map()
 
 
 

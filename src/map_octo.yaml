@@ -1,9 +1,19 @@
+# the output monecraft world name
 level_name: robot_octo
-origin_x: 0
-origin_y: 20
-origin_z: 0
+
+# The smallest x,y,z point of the octomap will be placed at
+# these coordinates of the minecraft world
+origin_x: 10
+origin_y: 1
+origin_z: 10
+
+# the player's spawn point'
 spawn_x: 0
-spawn_y: 25
+spawn_y: 4
 spawn_z: 0
+
+# how much of the minecraft world to clear around the octomap
 oversize: 100
+
+# the height of the world to clear above the octomap
 clear_height: 256

@@ -1,21 +1,59 @@
+# The name of the level to be created
 level_name: robot_map
+
+# The occupancy threshold - any map value less thatn
+# this will be considered occupied.
 occ_thresh: 200
-empty_thresh: 200
-map_file: "/home/jfstepha/ros_workspace/maps/map_whole_house_13_02_17_fixed.pgm"
-occ_thresh: 200
+
+# The empty theshold - any map value greater than this
+# will be considered empty.
+# Values between occ_thresh and empty_thresh are
+# unexplored.
 empty_thresh: 250
+
+# The input map file
+map_file: "mymap.pgm"
+
+# The block to be placed in empty regions.
+# Default: 12:0 - sand.
 empty_item: "12:0"
+
+# The height of the empty_items in the empty
+# regions.
 empty_height: 1
+
+# The block to be placed in occupied regions
+# Default: 5:0 - wooden planks
 occupied_item: "5:0"
+
+# The height of the blocks to be built in the occipied
+# regions.  Values of more than about 4 will build a 
+# wall out of the map.
 occupied_height: 15
+
+# The item to be placed in unexplored regions of the map.
+# Default: 3:0 - dirt
 unexplored_item: "3:0"
+
+# The origin of the minecraft world.  This point will
+# correspond to 0,0 on the input map.
 origin_x: 0
 origin_y: 20
 origin_z: 0
+
+# The spawn point of the minecraft world.  This is
+# where the player is placed when entering the world,
+# or when re-spawning.
 spawn_x: 246
 spawn_y: 21
 spawn_z: 77
+
+# The size of the area to be cleared out around the map
 oversize: 100
 clear_height: 256
+
+# Setting do_ceilint to true will cause a ceiling to be built
+# on the map, at the height of the occupied item,
+# made out of the ceiling item.
 do_ceiling: false
 ceiling_item: "89:0"
